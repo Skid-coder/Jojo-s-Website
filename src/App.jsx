@@ -8,6 +8,7 @@ import LessonFormat from './components/LessonFormat.jsx';
 import Gallery from './components/Gallery.jsx';
 import Pricing from './components/Pricing.jsx';
 import Reviews from './components/Reviews.jsx';
+import FAQ from './components/FAQ.jsx';
 import FinalCTA from './components/FinalCTA.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
@@ -26,6 +27,7 @@ export default function App() {
           <Gallery />
           <Pricing />
           <Reviews />
+          <FAQ />
           <FinalCTA />
           <Contact />
         </main>

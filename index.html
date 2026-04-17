@@ -1,21 +1,286 @@
 <!doctype html>
-<html lang="ru">
+<!--
+  NOTE: Replace every occurrence of `https://learnenglishwithjoan.com` below
+  with your real production domain before deploying. It's used in the
+  canonical URL, Open Graph, Twitter Card and JSON-LD structured data.
+-->
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#7c4dff" />
+
+    <title>Learn English with Joan — Native English Teacher Online</title>
     <meta
       name="description"
-      content="Learn English with Joan — friendly native English teacher online. 1-on-1 lessons, conversation-focused, all levels. Trial lesson 500₽."
+      content="Learn English online with Joan, a friendly native English teacher with 8+ years of experience. 1-on-1 conversation-focused lessons for kids and adults, all levels. Trial lesson from 500₽."
     />
-    <meta name="theme-color" content="#7c4dff" />
+    <meta
+      name="keywords"
+      content="native english teacher online, learn english with native speaker, english lessons online, english tutor, 1-on-1 english lessons, english conversation lessons, английский с носителем, репетитор английского онлайн"
+    />
+    <meta name="author" content="Agbo Omimi Faith Joan" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://learnenglishwithjoan.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://learnenglishwithjoan.com/" />
+    <meta property="og:site_name" content="Learn English with Joan" />
+    <meta property="og:title" content="Learn English with Joan — Native English Teacher Online" />
+    <meta
+      property="og:description"
+      content="Friendly native English teacher with 8+ years of experience. Speak confidently from your first lesson. Trial lesson from 500₽."
+    />
+    <meta property="og:image" content="https://learnenglishwithjoan.com/images/teacher-hero.jpg" />
+    <meta property="og:image:alt" content="Joan — native English teacher" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Learn English with Joan — Native English Teacher Online" />
+    <meta
+      name="twitter:description"
+      content="Friendly native English teacher with 8+ years of experience. Trial lesson from 500₽."
+    />
+    <meta name="twitter:image" content="https://learnenglishwithjoan.com/images/teacher-hero.jpg" />
+
+    <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/images/teacher-hero.jpg" fetchpriority="high" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Learn English with Joan — Native English Teacher Online</title>
+
+    <!-- Structured data: Person + Service + Offers + Reviews + FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://learnenglishwithjoan.com/#person",
+          "name": "Agbo Omimi Faith Joan",
+          "alternateName": "Joan",
+          "jobTitle": "English Language Teacher",
+          "description": "Native English speaker and online English teacher with 8+ years of experience. Lessons for kids and adults, all levels.",
+          "image": "https://learnenglishwithjoan.com/images/teacher-hero.jpg",
+          "url": "https://learnenglishwithjoan.com/",
+          "knowsLanguage": ["English", "Russian"],
+          "sameAs": [
+            "https://www.avito.ru/moskva/predlozheniya_uslug/prepodavatel_angliyskogo_yazyka_onlayn_3036266554"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://learnenglishwithjoan.com/#service",
+          "name": "Learn English with Joan",
+          "url": "https://learnenglishwithjoan.com/",
+          "image": "https://learnenglishwithjoan.com/images/teacher-hero.jpg",
+          "description": "1-on-1 English lessons online with a native speaker. Speaking-focused lessons for kids and adults, beginner to advanced.",
+          "provider": { "@id": "https://learnenglishwithjoan.com/#person" },
+          "areaServed": "Worldwide",
+          "availableLanguage": ["en", "ru"],
+          "priceRange": "500₽–1800₽",
+          "serviceType": "Online English language lessons",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "27",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "English lesson plans",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Trial lesson (30 minutes)",
+                "price": "500",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://learnenglishwithjoan.com/#pricing"
+              },
+              {
+                "@type": "Offer",
+                "name": "Individual lesson (30 minutes)",
+                "price": "800",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://learnenglishwithjoan.com/#pricing"
+              },
+              {
+                "@type": "Offer",
+                "name": "Individual lesson (45 minutes)",
+                "price": "1200",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://learnenglishwithjoan.com/#pricing"
+              },
+              {
+                "@type": "Offer",
+                "name": "Individual lesson (60 minutes)",
+                "price": "1800",
+                "priceCurrency": "RUB",
+                "availability": "https://schema.org/InStock",
+                "url": "https://learnenglishwithjoan.com/#pricing"
+              }
+            ]
+          },
+          "review": [
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Natalya" },
+              "datePublished": "2025-03-11",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Such a lovely teacher. My son used to try to escape every lesson — but with Joan he didn’t leave the room once! He absolutely loved the lesson!"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anna" },
+              "datePublished": "2025-03-08",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "So glad I reached out to Joan — it was a really interesting, supportive and useful experience! I’ll keep taking lessons."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Nataliya" },
+              "datePublished": "2024-11-13",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Joan is amazing! She’s a warm, attentive teacher who explains things simply and in such a pleasant way. Lessons are a real pleasure!"
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Konstantin" },
+              "datePublished": "2024-01-20",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "Excellent teacher. Lessons are a pure pleasure — she’s professional, positive and makes you feel at ease right away."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Fatima" },
+              "datePublished": "2025-04-10",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "My kids loved the trial lesson with Joan — we’ll definitely keep going. So friendly, she connected with my kids instantly."
+            },
+            {
+              "@type": "Review",
+              "author": { "@type": "Person", "name": "Anastasia" },
+              "datePublished": "2023-09-07",
+              "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+              "reviewBody": "I’ve finally found my teacher and mentor. Homework is actually fun, and learning English feels comfortable and stress-free!"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Who are individual lessons suitable for?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Kids and adults — from absolute beginner (A0) to upper-intermediate (B2). I build the program around your level and we move forward step by step."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How are the lessons structured?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "30, 45 or 60 minutes online via Zoom, Skype, Telegram or WhatsApp — lots of speaking practice, relevant topics, and materials chosen for you."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What materials do you use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Modern American and British textbooks plus my own materials, always tailored to your goals and interests."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Will there be grammar and pronunciation?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — short, clear explanations and instant practice in real speech: shadowing, mini-dialogues, realistic scenarios."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How much homework?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You pick the pace: light, standard or intensive. The main rule is regularity without overload."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When should I expect results?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Most students feel noticeably more confident speaking within 4–6 weeks of regular lessons."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I reschedule a lesson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. If you let me know at least 2–4 hours in advance, I’ll move you to another open slot."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if I miss a lesson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Don’t worry — the materials stay available and we’ll recap the key points in the next lesson."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a trial lesson?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — a 30-minute online trial for 500₽. Intro, level check, and a first-month plan."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Any age restrictions?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I teach kids (from about 6 years old) and adults. Teens are very welcome too."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are pair or mini-group lessons possible?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — lessons for 2 people work great and are a lot of fun."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Payment and receipts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pay per lesson or in packs. Easy online payment. Receipts on request."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
