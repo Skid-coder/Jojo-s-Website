@@ -31,13 +31,18 @@ export default function Header() {
       }`}
     >
       <div className="container-page flex h-16 sm:h-[72px] items-center justify-between gap-3">
-        <a href="#top" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-soft">
+        <a href="#top" className="flex items-center gap-2.5 font-display tracking-tight" aria-label="Learn English with Joan">
+          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white font-extrabold shadow-soft">
             J
           </span>
-          <span className="text-slate-900">
-            {CONFIG.teacher.firstName}
-            <span className="text-brand-600">.</span>
+          <span className="leading-tight">
+            <span className="hidden sm:block text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-500">
+              Learn English with
+            </span>
+            <span className="block text-lg sm:text-xl font-extrabold text-slate-900">
+              {CONFIG.teacher.firstName}
+              <span className="text-brand-600">.</span>
+            </span>
           </span>
         </a>
 

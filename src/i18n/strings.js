@@ -151,7 +151,7 @@ export const strings = {
       verifiedB: 'и 27 отзывами.',
     },
     footer: {
-      role: 'Joan · Преподаватель английского',
+      role: 'Learn English with Joan',
       rights: 'Все права защищены',
       about: 'Обо мне',
       pricing: 'Цены',
@@ -312,7 +312,7 @@ export const strings = {
       verifiedB: 'with 27 reviews.',
     },
     footer: {
-      role: 'Joan · English Teacher',
+      role: 'Learn English with Joan',
       rights: 'All rights reserved',
       about: 'About',
       pricing: 'Pricing',
