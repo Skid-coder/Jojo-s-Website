@@ -13,7 +13,6 @@ export const CONFIG = {
       '/images/teacher-1.jpg',
       '/images/teacher-2.jpg',
       '/images/teacher-3.jpg',
-      '/images/teacher-4.jpg',
       '/images/teacher-5.jpg',
     ],
   },

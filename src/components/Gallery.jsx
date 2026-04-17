@@ -1,6 +1,7 @@
 import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
+import Photo from './Photo.jsx';
 
 export default function Gallery() {
   const t = useT();
@@ -23,22 +24,15 @@ export default function Gallery() {
               {photos.map((src, i) => (
                 <figure
                   key={src}
-                  className="relative snap-start shrink-0 w-56 sm:w-64 aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-card"
+                  className="relative snap-start shrink-0 w-56 sm:w-64 group"
                 >
-                  <img
+                  <Photo
                     src={src}
                     alt={`Joan photo ${i + 1}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
+                    placeholder={null}
+                    imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-card"
                   />
-                  <figcaption className="absolute inset-0 flex items-end p-3 text-xs font-semibold text-brand-700/70 pointer-events-none select-none">
-                    <span className="rounded-md bg-white/80 px-2 py-1">
-                      public/images/teacher-{i + 1}.jpg
-                    </span>
-                  </figcaption>
                 </figure>
               ))}
             </div>

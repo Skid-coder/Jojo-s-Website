@@ -2,6 +2,7 @@ import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
 import { CheckIcon } from './Icons.jsx';
+import Photo from './Photo.jsx';
 
 export default function About() {
   const t = useT();
@@ -11,20 +12,12 @@ export default function About() {
         <SectionReveal className="lg:col-span-5">
           <div className="relative mx-auto max-w-sm">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-200/50 to-blue-200/40 blur-2xl" />
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-soft">
-              <img
-                src={CONFIG.teacher.aboutImage}
-                alt={t.about.imgAlt}
-                loading="lazy"
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center text-brand-700/60 text-sm font-semibold pointer-events-none select-none px-6 text-center">
-                {t.about.imgPlaceholder}
-              </div>
-            </div>
+            <Photo
+              src={CONFIG.teacher.aboutImage}
+              alt={t.about.imgAlt}
+              placeholder={t.about.imgPlaceholder}
+              className="aspect-[4/5] overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-soft"
+            />
           </div>
         </SectionReveal>
 

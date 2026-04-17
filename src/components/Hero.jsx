@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
 import { StarIcon, BadgeIcon, GlobeIcon, ArrowRightIcon } from './Icons.jsx';
+import Photo from './Photo.jsx';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -99,20 +100,13 @@ export default function Hero() {
         >
           <div className="relative mx-auto max-w-md">
             <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-300/40 via-blue-200/40 to-transparent blur-2xl" />
-            <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-100 to-blue-100 aspect-[4/5] shadow-soft ring-1 ring-white">
-              <img
-                src={CONFIG.teacher.heroImage}
-                alt={t.about.imgAlt}
-                loading="eager"
-                className="h-full w-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center text-brand-700/60 text-sm font-semibold pointer-events-none select-none px-6 text-center">
-                {t.hero.imgPlaceholder}
-              </div>
-            </div>
+            <Photo
+              src={CONFIG.teacher.heroImage}
+              alt={t.about.imgAlt}
+              loading="eager"
+              placeholder={t.hero.imgPlaceholder}
+              className="overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-100 to-blue-100 aspect-[4/5] shadow-soft ring-1 ring-white"
+            />
 
             <motion.div
               initial={{ opacity: 0, y: 10 }}
