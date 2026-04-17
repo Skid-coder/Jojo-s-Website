@@ -1,53 +1,17 @@
 import SectionReveal from './SectionReveal.jsx';
+import { CONFIG } from '../config.js';
+import { useT } from '../i18n/LanguageContext.jsx';
 import { StarIcon } from './Icons.jsx';
 
-const reviews = [
-  {
-    name: 'Наталья Спасская',
-    date: 'Март 2025',
-    text: 'Очень приятный учитель. Мой сын хотел всегда сбежать с занятий, но с Joan он занимался и ни разу не выбегал из комнаты! Он был в полном восторге от занятия!',
-    rating: 5,
-  },
-  {
-    name: 'Анна',
-    date: 'Март 2025',
-    text: 'Рада, что написала именно Joan — очень интересный, поддерживающий и полезный опыт! Планирую продолжать. Успели обсудить важные темы и вспомнить грамматику.',
-    rating: 5,
-  },
-  {
-    name: 'Наталия',
-    date: 'Ноябрь 2024',
-    text: 'Joan потрясающая! Чуткий и приятный преподаватель, который не только просто объясняет материал, но и делает это в приятной манере. Заниматься — одно удовольствие!',
-    rating: 5,
-  },
-  {
-    name: 'Константин',
-    date: 'Январь 2024',
-    text: 'Отличный преподаватель. Заниматься — одно удовольствие. Профессионально подходит к занятиям, позитивная и жизнерадостная, очень располагает к себе.',
-    rating: 5,
-  },
-  {
-    name: 'Фатима',
-    date: 'Апрель 2025',
-    text: 'Моим деткам очень понравился пробный урок с Joan — будем продолжать с ней заниматься. Очень приятная, нашла сразу подход к деткам. 👍',
-    rating: 5,
-  },
-  {
-    name: 'Анастасия',
-    date: 'Сентябрь 2023',
-    text: 'Наконец-то я нашла своего преподавателя и наставника. Домашняя работа приносит удовольствие, изучение английского проходит комфортно и без негативных эмоций!',
-    rating: 5,
-  },
-];
-
 export default function Reviews() {
+  const t = useT();
   return (
     <section id="reviews" className="section bg-gradient-to-b from-white to-slate-50">
       <div className="container-page">
         <SectionReveal className="max-w-2xl">
-          <span className="eyebrow">Отзывы учеников</span>
+          <span className="eyebrow">{t.reviews.eyebrow}</span>
           <h2 className="section-title mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Что говорят ученики и их родители
+            {t.reviews.title}
           </h2>
           <div className="mt-4 flex items-center gap-3">
             <div className="flex -space-x-1">
@@ -56,12 +20,14 @@ export default function Reviews() {
               ))}
             </div>
             <span className="text-slate-700 font-semibold">5.0</span>
-            <span className="text-slate-500">· 27 отзывов на Авито</span>
+            <span className="text-slate-500">
+              · {CONFIG.teacher.reviewsCount} {t.reviews.summary}
+            </span>
           </div>
         </SectionReveal>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {reviews.map((r, i) => (
+          {t.reviews.items.map((r, i) => (
             <SectionReveal key={r.name + r.date} delay={i * 0.06}>
               <ReviewCard review={r} />
             </SectionReveal>
@@ -77,7 +43,7 @@ function ReviewCard({ review }) {
   return (
     <article className="card h-full flex flex-col">
       <div className="flex -space-x-1">
-        {[...Array(review.rating)].map((_, i) => (
+        {[...Array(5)].map((_, i) => (
           <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
         ))}
       </div>

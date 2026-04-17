@@ -1,93 +1,49 @@
 import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
+import { useT } from '../i18n/LanguageContext.jsx';
 import { CheckIcon, SparkleIcon } from './Icons.jsx';
 
-const plans = [
-  {
-    id: 'trial',
-    name: 'Пробный урок',
-    duration: '30 минут · онлайн',
-    price: CONFIG.pricing.trial,
-    features: [
-      'Знакомство и определение уровня',
-      'План индивидуальных занятий',
-      'Без обязательств продолжать',
-    ],
-    cta: 'Записаться на пробный',
-    tone: 'ghost',
-  },
-  {
-    id: 'm30',
-    name: '30 минут',
-    duration: 'Короткий урок',
-    price: CONFIG.pricing.thirty,
-    features: ['Идеально для детей', 'Интенсивная практика речи', 'Домашнее задание'],
-    cta: 'Выбрать',
-    tone: 'ghost',
-  },
-  {
-    id: 'm45',
-    name: '45 минут',
-    duration: 'Популярный',
-    price: CONFIG.pricing.fortyFive,
-    features: [
-      'Оптимальный формат',
-      'Грамматика + разговор',
-      'Домашка с разбором',
-      'Персональные материалы',
-    ],
-    cta: 'Выбрать',
-    tone: 'primary',
-    featured: true,
-  },
-  {
-    id: 'm60',
-    name: '60 минут',
-    duration: 'Полный урок',
-    price: CONFIG.pricing.sixty,
-    features: [
-      'Максимум погружения',
-      'Работа по вашей цели',
-      'Подготовка к экзамену / интервью',
-    ],
-    cta: 'Выбрать',
-    tone: 'ghost',
-  },
+const PRICES = [
+  CONFIG.pricing.trial,
+  CONFIG.pricing.thirty,
+  CONFIG.pricing.fortyFive,
+  CONFIG.pricing.sixty,
 ];
 
 export default function Pricing() {
+  const t = useT();
   return (
     <section id="pricing" className="section bg-white">
       <div className="container-page">
         <SectionReveal className="max-w-2xl">
-          <span className="eyebrow">Цены</span>
+          <span className="eyebrow">{t.pricing.eyebrow}</span>
           <h2 className="section-title mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Честные цены, без скрытых платежей
+            {t.pricing.title}
           </h2>
-          <p className="mt-4 text-slate-600 text-lg">
-            Первый урок — всего 500₽. Узнайте свой уровень и решите, подходит ли вам формат,
-            без обязательств.
-          </p>
+          <p className="mt-4 text-slate-600 text-lg">{t.pricing.sub}</p>
         </SectionReveal>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {plans.map((p, i) => (
-            <SectionReveal key={p.id} delay={i * 0.07}>
-              <PlanCard plan={p} />
+          {t.pricing.plans.map((plan, i) => (
+            <SectionReveal key={plan.name} delay={i * 0.07}>
+              <PlanCard
+                plan={plan}
+                price={PRICES[i]}
+                perLesson={t.pricing.perLesson}
+                popularLabel={t.pricing.popular}
+                featured={i === 2}
+              />
             </SectionReveal>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-slate-500">
-          Все уроки — индивидуально, онлайн. Оплата удобным способом.
-        </p>
+        <p className="mt-8 text-center text-sm text-slate-500">{t.pricing.note}</p>
       </div>
     </section>
   );
 }
 
-function PlanCard({ plan }) {
-  const featured = plan.featured;
+function PlanCard({ plan, price, perLesson, popularLabel, featured }) {
   return (
     <div
       className={`relative h-full rounded-2xl p-6 sm:p-7 transition-all duration-200 flex flex-col ${
@@ -100,7 +56,7 @@ function PlanCard({ plan }) {
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-yellow-300 text-brand-900 px-3 py-1 text-xs font-bold shadow">
             <SparkleIcon className="h-3.5 w-3.5" />
-            Самый популярный
+            {popularLabel}
           </span>
         </div>
       )}
@@ -116,10 +72,10 @@ function PlanCard({ plan }) {
 
       <div className="mt-5 flex items-baseline gap-1.5">
         <span className={`text-4xl font-extrabold ${featured ? 'text-white' : 'text-slate-900'}`}>
-          {plan.price}₽
+          {price}₽
         </span>
         <span className={`text-sm ${featured ? 'text-brand-100' : 'text-slate-500'}`}>
-          / урок
+          {perLesson}
         </span>
       </div>
 

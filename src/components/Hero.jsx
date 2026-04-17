@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CONFIG } from '../config.js';
+import { useT } from '../i18n/LanguageContext.jsx';
 import { StarIcon, BadgeIcon, GlobeIcon, ArrowRightIcon } from './Icons.jsx';
 
 const fadeUp = {
@@ -12,6 +13,7 @@ const fadeUp = {
 };
 
 export default function Hero() {
+  const t = useT();
   return (
     <section id="top" className="relative overflow-hidden bg-hero-radial pt-28 sm:pt-32 pb-16 sm:pb-24">
       <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl" />
@@ -19,15 +21,9 @@ export default function Hero() {
 
       <div className="container-page grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative">
         <div className="lg:col-span-7">
-          <motion.span
-            className="eyebrow"
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            custom={0}
-          >
+          <motion.span className="eyebrow" variants={fadeUp} initial="hidden" animate="show" custom={0}>
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-500" />
-            Native English Teacher · Онлайн
+            {t.hero.eyebrow}
           </motion.span>
 
           <motion.h1
@@ -37,11 +33,11 @@ export default function Hero() {
             animate="show"
             custom={1}
           >
-            Говорите по-английски{' '}
+            {t.hero.headlineBefore}{' '}
             <span className="bg-gradient-to-r from-brand-600 to-blue-500 bg-clip-text text-transparent">
-              уверенно
+              {t.hero.headlineHighlight}
             </span>{' '}
-            с носителем языка
+            {t.hero.headlineAfter}
           </motion.h1>
 
           <motion.p
@@ -51,8 +47,7 @@ export default function Hero() {
             animate="show"
             custom={2}
           >
-            Учитесь говорить естественно, улучшайте беглость речи и чувствуйте себя уверенно
-            в реальных разговорах. Индивидуальный подход для детей и взрослых.
+            {t.hero.sub}
           </motion.p>
 
           <motion.div
@@ -63,11 +58,11 @@ export default function Hero() {
             custom={3}
           >
             <a href="#contact" className="btn-primary">
-              Пробный урок за 500₽
+              {t.hero.ctaPrimary}
               <ArrowRightIcon />
             </a>
             <a href="#pricing" className="btn-secondary">
-              Посмотреть цены
+              {t.hero.ctaSecondary}
             </a>
           </motion.div>
 
@@ -81,17 +76,17 @@ export default function Hero() {
             <TrustBadge
               icon={<StarIcon className="h-5 w-5 text-yellow-400" />}
               title="5.0"
-              subtitle={`${CONFIG.teacher.reviewsCount}+ отзывов`}
+              subtitle={`${CONFIG.teacher.reviewsCount}+ ${t.hero.badgeReviews}`}
             />
             <TrustBadge
               icon={<BadgeIcon className="h-5 w-5 text-brand-600" />}
-              title={`${CONFIG.teacher.yearsExperience}+ лет`}
-              subtitle="опыта"
+              title={`${CONFIG.teacher.yearsExperience}+ ${t.hero.badgeYears}`}
+              subtitle={t.hero.badgeExperience}
             />
             <TrustBadge
               icon={<GlobeIcon className="h-5 w-5 text-blue-500" />}
-              title="Native"
-              subtitle="speaker"
+              title={t.hero.badgeNative}
+              subtitle={t.hero.badgeSpeaker}
             />
           </motion.div>
         </div>
@@ -107,19 +102,15 @@ export default function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-100 to-blue-100 aspect-[4/5] shadow-soft ring-1 ring-white">
               <img
                 src={CONFIG.teacher.heroImage}
-                alt="Преподаватель английского"
+                alt={t.about.imgAlt}
                 loading="eager"
                 className="h-full w-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              <div className="absolute inset-0 flex items-center justify-center text-brand-700/60 text-sm font-semibold pointer-events-none select-none">
-                <span className="px-4 text-center">
-                  Добавьте фото в
-                  <br />
-                  public/images/teacher-hero.jpg
-                </span>
+              <div className="absolute inset-0 flex items-center justify-center text-brand-700/60 text-sm font-semibold pointer-events-none select-none px-6 text-center">
+                {t.hero.imgPlaceholder}
               </div>
             </div>
 
@@ -135,8 +126,10 @@ export default function Hero() {
                 ))}
               </div>
               <div className="text-sm">
-                <div className="font-bold text-slate-900">5.0 рейтинг</div>
-                <div className="text-slate-500 text-xs">{CONFIG.teacher.reviewsCount}+ отзывов</div>
+                <div className="font-bold text-slate-900">{t.hero.float1Title}</div>
+                <div className="text-slate-500 text-xs">
+                  {CONFIG.teacher.reviewsCount}+ {t.hero.float1Sub}
+                </div>
               </div>
             </motion.div>
 
@@ -150,8 +143,8 @@ export default function Hero() {
                 <BadgeIcon className="h-5 w-5" />
               </div>
               <div className="text-sm">
-                <div className="font-bold text-slate-900">Документы</div>
-                <div className="text-slate-500 text-xs">проверены на Авито</div>
+                <div className="font-bold text-slate-900">{t.hero.float2Title}</div>
+                <div className="text-slate-500 text-xs">{t.hero.float2Sub}</div>
               </div>
             </motion.div>
           </div>
@@ -164,9 +157,7 @@ export default function Hero() {
 function TrustBadge({ icon, title, subtitle }) {
   return (
     <div className="rounded-2xl bg-white/70 backdrop-blur ring-1 ring-slate-100 shadow-sm px-3 sm:px-4 py-3 flex items-center gap-3">
-      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-slate-50">
-        {icon}
-      </div>
+      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-slate-50">{icon}</div>
       <div className="leading-tight">
         <div className="font-bold text-slate-900 text-sm sm:text-base">{title}</div>
         <div className="text-slate-500 text-xs">{subtitle}</div>

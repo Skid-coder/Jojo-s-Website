@@ -30,10 +30,18 @@ Open `src/config.js` and replace the placeholder values:
 
 Place your photos in `public/images/`:
 
-- `public/images/teacher-hero.jpg` — hero section (portrait, ~4:5 ratio)
-- `public/images/teacher-about.jpg` — about section (portrait, ~4:5 ratio)
+- `teacher-hero.jpg` — hero section (portrait, ~4:5 ratio)
+- `teacher-about.jpg` — about section (portrait, ~4:5 ratio)
+- `teacher-1.jpg` … `teacher-5.jpg` — gallery strip (portrait, ~3:4 ratio)
 
-Placeholders are shown automatically until the images are added.
+Placeholders are shown automatically until the images are added. Edit
+`src/config.js` → `teacher.gallery` to add/remove gallery slots.
+
+## Languages
+
+The site ships with a **RU / EN language toggle** in the header. On first
+visit the language is auto-detected from the browser (`navigator.language`)
+and saved in `localStorage`. All strings live in `src/i18n/strings.js`.
 
 ## Project structure
 

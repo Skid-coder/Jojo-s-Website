@@ -1,16 +1,19 @@
 import { useEffect, useState } from 'react';
 import { CONFIG } from '../config.js';
-
-const links = [
-  { href: '#about', label: 'Обо мне' },
-  { href: '#results', label: 'Результаты' },
-  { href: '#pricing', label: 'Цены' },
-  { href: '#reviews', label: 'Отзывы' },
-];
+import { useT } from '../i18n/LanguageContext.jsx';
+import LanguageToggle from './LanguageToggle.jsx';
 
 export default function Header() {
+  const t = useT();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: '#about', label: t.nav.about },
+    { href: '#results', label: t.nav.results },
+    { href: '#pricing', label: t.nav.pricing },
+    { href: '#reviews', label: t.nav.reviews },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -27,7 +30,7 @@ export default function Header() {
           : 'bg-transparent'
       }`}
     >
-      <div className="container-page flex h-16 sm:h-[72px] items-center justify-between">
+      <div className="container-page flex h-16 sm:h-[72px] items-center justify-between gap-3">
         <a href="#top" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight">
           <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-brand-700 text-white shadow-soft">
             J
@@ -47,12 +50,13 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <LanguageToggle className="hidden sm:inline-flex" />
           <a href="#contact" className="btn-primary !px-5 !py-2.5 text-sm hidden sm:inline-flex">
-            Записаться
+            {t.nav.book}
           </a>
           <button
             className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-700"
-            aria-label="Открыть меню"
+            aria-label={t.nav.menu}
             onClick={() => setOpen((v) => !v)}
           >
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
@@ -79,8 +83,11 @@ export default function Header() {
                 {l.label}
               </a>
             ))}
-            <a href="#contact" onClick={() => setOpen(false)} className="btn-primary mt-2">
-              Записаться на пробный урок
+            <div className="flex items-center justify-between gap-3 py-3">
+              <LanguageToggle />
+            </div>
+            <a href="#contact" onClick={() => setOpen(false)} className="btn-primary">
+              {t.nav.bookTrial}
             </a>
           </div>
         </div>

@@ -1,19 +1,19 @@
 import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
+import { useT } from '../i18n/LanguageContext.jsx';
 import { WhatsAppIcon, TelegramIcon, ShieldIcon } from './Icons.jsx';
 
 export default function Contact() {
+  const t = useT();
   return (
     <section id="contact" className="section bg-white">
       <div className="container-page">
         <SectionReveal className="text-center max-w-2xl mx-auto">
-          <span className="eyebrow">Контакты</span>
+          <span className="eyebrow">{t.contact.eyebrow}</span>
           <h2 className="section-title mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
-            Напишите — и забронируем ваш первый урок
+            {t.contact.title}
           </h2>
-          <p className="mt-4 text-slate-600 text-lg">
-            Выберите удобный мессенджер. Я отвечу в течение часа в рабочее время.
-          </p>
+          <p className="mt-4 text-slate-600 text-lg">{t.contact.sub}</p>
         </SectionReveal>
 
         <SectionReveal delay={0.1} className="mt-10">
@@ -29,12 +29,12 @@ export default function Contact() {
                   <WhatsAppIcon className="h-7 w-7" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold">WhatsApp</div>
-                  <div className="text-emerald-50/90 text-sm">Быстрый ответ в мессенджере</div>
+                  <div className="text-xl font-bold">{t.contact.whatsappTitle}</div>
+                  <div className="text-emerald-50/90 text-sm">{t.contact.whatsappSub}</div>
                 </div>
               </div>
               <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/90">
-                Написать в WhatsApp
+                {t.contact.whatsappCta}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </div>
             </a>
@@ -50,12 +50,12 @@ export default function Contact() {
                   <TelegramIcon className="h-7 w-7" />
                 </div>
                 <div>
-                  <div className="text-xl font-bold">Telegram</div>
-                  <div className="text-sky-50/90 text-sm">Удобно для голосовых и файлов</div>
+                  <div className="text-xl font-bold">{t.contact.telegramTitle}</div>
+                  <div className="text-sky-50/90 text-sm">{t.contact.telegramSub}</div>
                 </div>
               </div>
               <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white/90">
-                Написать в Telegram
+                {t.contact.telegramCta}
                 <span className="transition-transform group-hover:translate-x-1">→</span>
               </div>
             </a>
@@ -68,8 +68,8 @@ export default function Contact() {
               <ShieldIcon className="h-5 w-5" />
             </div>
             <p className="text-sm text-slate-600">
-              Документы проверены через Госуслуги. Профиль на Авито с рейтингом{' '}
-              <strong className="text-slate-900">5.0</strong> и 27 отзывами.
+              {t.contact.verifiedA} <strong className="text-slate-900">5.0</strong>{' '}
+              {t.contact.verifiedB}
             </p>
           </div>
         </SectionReveal>
