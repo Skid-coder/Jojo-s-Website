@@ -1,0 +1,31 @@
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import Trust from './components/Trust.jsx';
+import About from './components/About.jsx';
+import Results from './components/Results.jsx';
+import LessonFormat from './components/LessonFormat.jsx';
+import Pricing from './components/Pricing.jsx';
+import Reviews from './components/Reviews.jsx';
+import FinalCTA from './components/FinalCTA.jsx';
+import Contact from './components/Contact.jsx';
+import Footer from './components/Footer.jsx';
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      <main>
+        <Hero />
+        <Trust />
+        <About />
+        <Results />
+        <LessonFormat />
+        <Pricing />
+        <Reviews />
+        <FinalCTA />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
