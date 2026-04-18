@@ -141,123 +141,112 @@ export default function Header() {
 
 function MenuOverlay({ links, firstName, onClose, t }) {
   return (
-    <motion.div
-      key="overlay"
-      className="fixed inset-0 z-50"
-      aria-modal="true"
-      role="dialog"
-    >
+    <div className="fixed inset-0 z-50" aria-modal="true" role="dialog">
       <motion.div
-        initial={{ clipPath: 'circle(0% at 94% 6%)' }}
-        animate={{ clipPath: 'circle(160% at 94% 6%)' }}
-        exit={{ clipPath: 'circle(0% at 94% 6%)' }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute inset-0 bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClose}
+        className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+      />
+
+      <motion.aside
+        initial={{ x: '100%' }}
+        animate={{ x: 0 }}
+        exit={{ x: '100%' }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute right-0 top-0 h-full w-full sm:w-[420px] md:w-[460px] bg-gradient-to-br from-brand-600 via-brand-700 to-brand-900 shadow-2xl overflow-hidden"
       >
-        <div className="pointer-events-none absolute -top-32 -left-24 h-96 w-96 rounded-full bg-brand-400/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-24 h-[28rem] w-[28rem] rounded-full bg-blue-500/25 blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:radial-gradient(rgba(255,255,255,0.8)_1px,transparent_1px)] [background-size:24px_24px]" />
-      </motion.div>
+        <div className="pointer-events-none absolute -top-24 -right-16 h-72 w-72 rounded-full bg-brand-400/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-blue-500/20 blur-3xl" />
 
-      <div className="relative h-full w-full overflow-y-auto">
-        <div className="container-page flex min-h-full flex-col py-6 sm:py-10">
-          <div className="flex items-start justify-between gap-4">
-            <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{ delay: 0.25, duration: 0.4 }}
-              className="font-display text-white"
-            >
-              <div className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.22em] text-white/70">
-                Learn English with
+        <div className="relative h-full w-full overflow-y-auto">
+          <div className="flex min-h-full flex-col px-7 sm:px-9 py-6 sm:py-8">
+            <div className="flex items-start justify-between gap-4">
+              <div className="font-display text-white">
+                <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/70">
+                  Learn English with
+                </div>
+                <div className="mt-1 text-4xl sm:text-5xl font-extrabold tracking-tight leading-none">
+                  {firstName}
+                  <span className="text-brand-200">.</span>
+                </div>
               </div>
-              <div className="mt-1 text-6xl sm:text-8xl font-extrabold tracking-tight leading-none">
-                {firstName}
-                <span className="text-brand-200">.</span>
-              </div>
-            </motion.div>
 
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label={t.nav.close}
-              className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20 backdrop-blur hover:bg-white/25 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                className="h-5 w-5"
-              >
-                <path d="M6 6l12 12M18 6L6 18" />
-              </svg>
-            </button>
-          </div>
-
-          <motion.nav
-            aria-label="Menu"
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            variants={{
-              hidden: {},
-              show: { transition: { staggerChildren: 0.06, delayChildren: 0.35 } },
-            }}
-            className="mt-10 sm:mt-16 flex flex-col"
-          >
-            {links.map((l, i) => (
-              <motion.a
-                key={l.href}
-                href={l.href}
+              <button
+                type="button"
                 onClick={onClose}
-                variants={{
-                  hidden: { opacity: 0, x: -24 },
-                  show: { opacity: 1, x: 0 },
-                }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                className="group flex items-center gap-5 border-b border-white/10 py-4 sm:py-5 text-3xl sm:text-5xl font-extrabold tracking-tight text-white/90 hover:text-white transition-colors"
+                aria-label={t.nav.close}
+                className="shrink-0 inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/20 backdrop-blur hover:bg-white/25 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
               >
-                <span className="w-8 text-sm font-semibold text-white/40 tabular-nums">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <span className="font-display flex-1">{l.label}</span>
-                <span
-                  aria-hidden="true"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 opacity-0 -translate-x-3 transition-all group-hover:opacity-100 group-hover:translate-x-0"
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  className="h-5 w-5"
                 >
-                  <ArrowRightIcon className="h-5 w-5" />
-                </span>
-              </motion.a>
-            ))}
-          </motion.nav>
-
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 12 }}
-            transition={{ delay: 0.7, duration: 0.4 }}
-            className="mt-auto pt-10 sm:pt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5"
-          >
-            <div className="flex items-center gap-3">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
-                Language
-              </span>
-              <LanguageToggle />
+                  <path d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              </button>
             </div>
-            <a
-              href="#contact"
-              onClick={onClose}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-brand-700 shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all"
+
+            <motion.nav
+              aria-label="Menu"
+              initial="hidden"
+              animate="show"
+              exit="hidden"
+              variants={{
+                hidden: {},
+                show: { transition: { staggerChildren: 0.05, delayChildren: 0.2 } },
+              }}
+              className="mt-10 flex flex-col"
             >
-              {t.nav.bookTrial}
-              <ArrowRightIcon />
-            </a>
-          </motion.div>
+              {links.map((l) => (
+                <motion.a
+                  key={l.href}
+                  href={l.href}
+                  onClick={onClose}
+                  variants={{
+                    hidden: { opacity: 0, x: 20 },
+                    show: { opacity: 1, x: 0 },
+                  }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="group flex items-center justify-between gap-4 border-b border-white/10 py-4 text-2xl sm:text-3xl font-extrabold tracking-tight text-white/90 hover:text-white hover:pl-1 transition-all"
+                >
+                  <span className="font-display">{l.label}</span>
+                  <ArrowRightIcon className="h-5 w-5 opacity-0 -translate-x-2 transition-all group-hover:opacity-100 group-hover:translate-x-0" />
+                </motion.a>
+              ))}
+            </motion.nav>
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 12 }}
+              transition={{ delay: 0.45, duration: 0.35 }}
+              className="mt-auto pt-10 flex flex-col gap-5"
+            >
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/70">
+                  Language
+                </span>
+                <LanguageToggle />
+              </div>
+              <a
+                href="#contact"
+                onClick={onClose}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 font-semibold text-brand-700 shadow-lg hover:-translate-y-0.5 hover:shadow-xl transition-all"
+              >
+                {t.nav.bookTrial}
+                <ArrowRightIcon />
+              </a>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.aside>
+    </div>
   );
 }
