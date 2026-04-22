@@ -1,12 +1,12 @@
 import SectionReveal from './SectionReveal.jsx';
 import { useT } from '../i18n/LanguageContext.jsx';
-import { GlobeIcon, BadgeIcon, StarIcon, TrophyIcon } from './Icons.jsx';
+import { UKFlagIcon, BadgeIcon, StarIcon, TrophyIcon } from './Icons.jsx';
 
 const ICONS = [
-  <GlobeIcon className="h-7 w-7" />,
-  <BadgeIcon className="h-7 w-7" />,
-  <StarIcon className="h-7 w-7" />,
-  <TrophyIcon className="h-7 w-7" />,
+  { node: <UKFlagIcon className="h-7 w-10 rounded" />, bare: true },
+  { node: <BadgeIcon className="h-7 w-7" /> },
+  { node: <StarIcon className="h-7 w-7" /> },
+  { node: <TrophyIcon className="h-7 w-7" /> },
 ];
 
 export default function Trust() {
@@ -25,8 +25,12 @@ export default function Trust() {
           {t.trust.cards.map((it, i) => (
             <SectionReveal key={it.title} delay={i * 0.08}>
               <div className="card h-full">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-blue-50 text-brand-600">
-                  {ICONS[i]}
+                <div
+                  className={`grid h-12 w-12 place-items-center rounded-xl text-brand-600 ${
+                    ICONS[i].bare ? 'bg-transparent' : 'bg-gradient-to-br from-brand-50 to-blue-50'
+                  }`}
+                >
+                  {ICONS[i].node}
                 </div>
                 <h3 className="mt-4 font-bold text-slate-900 text-lg">{it.title}</h3>
                 <p className="mt-1.5 text-slate-600 text-sm leading-relaxed">{it.text}</p>

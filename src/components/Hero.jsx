@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
-import { StarIcon, BadgeIcon, GlobeIcon, ArrowRightIcon } from './Icons.jsx';
+import { StarIcon, BadgeIcon, UKFlagIcon, ArrowRightIcon } from './Icons.jsx';
 import Photo from './Photo.jsx';
 
 const fadeUp = {
@@ -85,7 +85,7 @@ export default function Hero() {
               subtitle={t.hero.badgeExperience}
             />
             <TrustBadge
-              icon={<GlobeIcon className="h-5 w-5 text-blue-500" />}
+              icon={<UKFlagIcon className="h-5 w-7 rounded-[3px]" />}
               title={t.hero.badgeNative}
               subtitle={t.hero.badgeSpeaker}
             />

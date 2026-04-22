@@ -17,6 +17,24 @@ export const GlobeIcon = ({ className = 'h-6 w-6' }) => (
   </svg>
 );
 
+export const UKFlagIcon = ({ className = 'h-6 w-6' }) => (
+  <svg viewBox="0 0 60 30" className={className} aria-label="United Kingdom flag" role="img">
+    <clipPath id="uk-clip">
+      <rect width="60" height="30" rx="5" />
+    </clipPath>
+    <clipPath id="uk-diag">
+      <path d="M0,0 L30,15 L60,0 L60,30 L30,15 L0,30 Z" />
+    </clipPath>
+    <g clipPath="url(#uk-clip)">
+      <rect width="60" height="30" fill="#012169" />
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" />
+      <path d="M0,0 L60,30 M60,0 L0,30" clipPath="url(#uk-diag)" stroke="#C8102E" strokeWidth="4" />
+      <path d="M30,0 V30 M0,15 H60" stroke="#fff" strokeWidth="10" />
+      <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" strokeWidth="6" />
+    </g>
+  </svg>
+);
+
 export const ClockIcon = ({ className = 'h-6 w-6' }) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
     <circle cx="12" cy="12" r="9" />
