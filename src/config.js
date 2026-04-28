@@ -1,4 +1,4 @@
-// Central configuration — edit contacts and image paths here.
+// Central configuration, edit contacts and image paths here.
 export const CONFIG = {
   teacher: {
     firstName: 'Joan',

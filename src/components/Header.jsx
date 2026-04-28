@@ -67,7 +67,7 @@ export default function Header() {
             </span>
           </a>
 
-          {/* Desktop nav — visible only when at top of page */}
+          {/* Desktop nav, visible only when at top of page */}
           <nav
             aria-label="Primary"
             className={`hidden lg:flex items-center gap-1 transition-all duration-300 ${
@@ -99,7 +99,7 @@ export default function Header() {
               {t.nav.book}
             </a>
 
-            {/* Hamburger — always on mobile; on desktop only once scrolled */}
+            {/* Hamburger, always on mobile; on desktop only once scrolled */}
             <button
               type="button"
               onClick={() => setOpen(true)}
