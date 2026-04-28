@@ -1,3 +1,4 @@
+import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
 
 export default function Footer() {
@@ -16,11 +17,24 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <nav className="flex flex-wrap gap-5 text-sm text-slate-500">
+        <nav className="flex flex-wrap items-center gap-5 text-sm text-slate-500">
           <a href="#about" className="hover:text-brand-700">{t.footer.about}</a>
           <a href="#pricing" className="hover:text-brand-700">{t.footer.pricing}</a>
           <a href="#reviews" className="hover:text-brand-700">{t.footer.reviews}</a>
           <a href="#contact" className="hover:text-brand-700">{t.footer.contact}</a>
+          <a
+            href={CONFIG.contacts.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 via-rose-500 to-amber-400 text-white hover:-translate-y-0.5 hover:shadow-md transition-all"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" />
+            </svg>
+          </a>
         </nav>
       </div>
     </footer>
