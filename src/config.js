@@ -18,8 +18,7 @@ export const CONFIG = {
     ],
   },
   contacts: {
-    // Replace these with real numbers/usernames.
-    whatsapp: 'https://wa.me/79999999999?text=Hi%20Joan%2C%20I%27d%20like%20to%20book%20a%20trial%20lesson',
+    whatsapp: 'https://wa.me/message/RT44T4WKCBBRE1',
     telegram: 'https://t.me/your_telegram',
     instagram: 'https://instagram.com/learnenglishwithjoan',
   },

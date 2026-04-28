@@ -1,7 +1,7 @@
 import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
-import { WhatsAppIcon, TelegramIcon, ShieldIcon } from './Icons.jsx';
+import { WhatsAppIcon, TelegramIcon, InstagramIcon, ShieldIcon } from './Icons.jsx';
 
 export default function Contact() {
   const t = useT();
@@ -17,6 +17,39 @@ export default function Contact() {
         </SectionReveal>
 
         <SectionReveal delay={0.1} className="mt-10">
+          <a
+            href={CONFIG.contacts.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block overflow-hidden rounded-3xl bg-gradient-to-br from-purple-600 via-pink-500 to-amber-400 p-7 sm:p-9 text-white shadow-soft transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl max-w-3xl mx-auto"
+          >
+            <div className="pointer-events-none absolute -top-20 -right-16 h-64 w-64 rounded-full bg-white/15 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -left-16 h-72 w-72 rounded-full bg-fuchsia-300/20 blur-3xl" />
+
+            <div className="relative flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-7">
+              <div className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white/25 backdrop-blur ring-1 ring-white/30">
+                <InstagramIcon className="h-8 w-8" />
+              </div>
+              <div className="flex-1">
+                <div className="text-2xl sm:text-3xl font-extrabold tracking-tight">
+                  {t.contact.instagramTitle}
+                </div>
+                <div className="mt-1 text-white/90 text-sm sm:text-base">
+                  {t.contact.instagramSub}
+                </div>
+                <div className="mt-1 text-white/70 text-xs sm:text-sm font-mono">
+                  {t.contact.instagramHandle}
+                </div>
+              </div>
+              <div className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-pink-600 shadow-md whitespace-nowrap">
+                {t.contact.instagramCta}
+                <span className="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </div>
+          </a>
+        </SectionReveal>
+
+        <SectionReveal delay={0.15} className="mt-5">
           <div className="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
             <a
               href={CONFIG.contacts.whatsapp}
@@ -62,7 +95,7 @@ export default function Contact() {
           </div>
         </SectionReveal>
 
-        <SectionReveal delay={0.15} className="mt-8">
+        <SectionReveal delay={0.2} className="mt-8">
           <div className="mx-auto max-w-3xl rounded-2xl bg-slate-50 ring-1 ring-slate-100 p-5 flex items-center gap-4">
             <div className="grid h-10 w-10 place-items-center rounded-xl bg-white text-brand-600 shadow-sm">
               <ShieldIcon className="h-5 w-5" />
