@@ -9,8 +9,8 @@ export const CONFIG = {
     heroImage: '/images/teacher-hero.jpg',
     aboutImage: '/images/teacher-about.jpg',
     // TEFL certificate + transcript images (place files in public/images/).
-    certificateImage: '/images/tefl-certificate.jpg',
-    transcriptImage: '/images/tefl-transcript.jpg',
+    certificateImage: '/images/tefl-certificate.png',
+    transcriptImage: '/images/tefl-transcript.png',
     // Photos shown in the small gallery strip.
     gallery: [
       '/images/teacher-1.jpg',
