@@ -3,6 +3,7 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Trust from './components/Trust.jsx';
 import About from './components/About.jsx';
+import Certified from './components/Certified.jsx';
 import Results from './components/Results.jsx';
 import LessonFormat from './components/LessonFormat.jsx';
 import Gallery from './components/Gallery.jsx';
@@ -22,6 +23,7 @@ export default function App() {
           <Hero />
           <Trust />
           <About />
+          <Certified />
           <Results />
           <LessonFormat />
           <Gallery />

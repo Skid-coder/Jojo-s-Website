@@ -34,6 +34,9 @@ export default function About() {
             {t.about.p2a} <strong className="text-slate-900">{t.about.p2b}</strong>
             {t.about.p2c}
           </p>
+          <p className="mt-4 text-slate-600 text-lg leading-relaxed">
+            {t.about.p3}
+          </p>
 
           <ul className="mt-7 grid sm:grid-cols-2 gap-3">
             {t.about.highlights.map((h) => (

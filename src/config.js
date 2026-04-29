@@ -8,6 +8,9 @@ export const CONFIG = {
     yearsExperience: 8,
     heroImage: '/images/teacher-hero.jpg',
     aboutImage: '/images/teacher-about.jpg',
+    // TEFL certificate + transcript images (place files in public/images/).
+    certificateImage: '/images/tefl-certificate.jpg',
+    transcriptImage: '/images/tefl-transcript.jpg',
     // Photos shown in the small gallery strip.
     gallery: [
       '/images/teacher-1.jpg',
