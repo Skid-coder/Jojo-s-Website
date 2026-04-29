@@ -23,19 +23,12 @@ export default function Certified() {
         </SectionReveal>
 
         <SectionReveal delay={0.1} className="mt-10">
-          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-            <div className="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-5">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 items-center max-w-5xl mx-auto">
+            <div className="lg:col-span-5">
               <Photo
                 src={CONFIG.teacher.certificateImage}
                 alt={c.certImgAlt}
                 placeholder="TEFL Certificate"
-                className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-blue-50 ring-1 ring-slate-100 shadow-card"
-                imgClassName="h-full w-full object-cover"
-              />
-              <Photo
-                src={CONFIG.teacher.transcriptImage}
-                alt={c.transcriptImgAlt}
-                placeholder="Course Transcript"
                 className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-50 to-blue-50 ring-1 ring-slate-100 shadow-card"
                 imgClassName="h-full w-full object-cover"
               />
