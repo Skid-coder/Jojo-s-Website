@@ -1,4 +1,5 @@
 import { LanguageProvider } from './i18n/LanguageContext.jsx';
+import { CurrencyProvider } from './CurrencyContext.jsx';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Trust from './components/Trust.jsx';
@@ -17,6 +18,7 @@ import Footer from './components/Footer.jsx';
 export default function App() {
   return (
     <LanguageProvider>
+      <CurrencyProvider>
       <div className="min-h-screen bg-white">
         <Header />
         <main>
@@ -35,6 +37,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      </CurrencyProvider>
     </LanguageProvider>
   );
 }

@@ -31,4 +31,21 @@ export const CONFIG = {
     fortyFive: 1200,
     sixty: 1800,
   },
+  // Manual exchange rates: how many RUB equal 1 unit of the foreign currency.
+  // Update occasionally to stay roughly current.
+  currency: {
+    base: 'RUB',
+    rates: {
+      RUB: 1,
+      USD: 92,
+      EUR: 100,
+      GBP: 117,
+    },
+    symbols: {
+      RUB: '₽',
+      USD: '$',
+      EUR: '€',
+      GBP: '£',
+    },
+  },
 };

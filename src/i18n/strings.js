@@ -116,6 +116,7 @@ export const strings = {
       sub: 'Первый урок, всего 500₽. Узнайте свой уровень и решите, подходит ли вам формат, без обязательств.',
       perLesson: '/ урок',
       popular: 'Самый популярный',
+      fxNote: 'Приблизительная конвертация. Оплата в рублях.',
       note: 'Все уроки, индивидуально, онлайн. Оплата удобным способом.',
       plans: [
         {
@@ -328,6 +329,7 @@ export const strings = {
       sub: 'Your first lesson is just 500₽. Find out your level and see if the format is right for you, no commitment.',
       perLesson: '/ lesson',
       popular: 'Most popular',
+      fxNote: 'Approximate conversion. Lessons are charged in ₽.',
       note: 'All lessons are 1-on-1, online. Flexible payment options available.',
       plans: [
         {

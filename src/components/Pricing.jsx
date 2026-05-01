@@ -1,7 +1,9 @@
 import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
+import { useCurrency } from '../CurrencyContext.jsx';
 import { CheckIcon, SparkleIcon } from './Icons.jsx';
+import CurrencyToggle from './CurrencyToggle.jsx';
 
 const PRICES = [
   CONFIG.pricing.trial,
@@ -12,23 +14,30 @@ const PRICES = [
 
 export default function Pricing() {
   const t = useT();
+  const { format, code } = useCurrency();
   return (
     <section id="pricing" className="section bg-white">
       <div className="container-page">
-        <SectionReveal className="max-w-2xl">
-          <span className="eyebrow">{t.pricing.eyebrow}</span>
-          <h2 className="section-title mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
-            {t.pricing.title}
-          </h2>
-          <p className="mt-4 text-slate-600 text-lg">{t.pricing.sub}</p>
-        </SectionReveal>
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+          <SectionReveal className="max-w-2xl">
+            <span className="eyebrow">{t.pricing.eyebrow}</span>
+            <h2 className="section-title mt-4 text-3xl sm:text-4xl font-extrabold text-slate-900">
+              {t.pricing.title}
+            </h2>
+            <p className="mt-4 text-slate-600 text-lg">{t.pricing.sub}</p>
+          </SectionReveal>
+
+          <SectionReveal delay={0.05} className="shrink-0">
+            <CurrencyToggle />
+          </SectionReveal>
+        </div>
 
         <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {t.pricing.plans.map((plan, i) => (
             <SectionReveal key={plan.name} delay={i * 0.07}>
               <PlanCard
                 plan={plan}
-                price={PRICES[i]}
+                price={format(PRICES[i])}
                 perLesson={t.pricing.perLesson}
                 popularLabel={t.pricing.popular}
                 featured={i === 2}
@@ -37,7 +46,10 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-slate-500">{t.pricing.note}</p>
+        <p className="mt-4 text-center text-xs text-slate-400">
+          {code !== 'RUB' && (t.pricing.fxNote || 'Approximate conversion. Lessons are charged in ₽.')}
+        </p>
+        <p className="mt-2 text-center text-sm text-slate-500">{t.pricing.note}</p>
       </div>
     </section>
   );
@@ -72,7 +84,7 @@ function PlanCard({ plan, price, perLesson, popularLabel, featured }) {
 
       <div className="mt-5 flex items-baseline gap-1.5">
         <span className={`text-4xl font-extrabold ${featured ? 'text-white' : 'text-slate-900'}`}>
-          {price}₽
+          {price}
         </span>
         <span className={`text-sm ${featured ? 'text-brand-100' : 'text-slate-500'}`}>
           {perLesson}
