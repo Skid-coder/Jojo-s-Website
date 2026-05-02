@@ -30,11 +30,10 @@ export function CurrencyProvider({ children }) {
     const symbol = CONFIG.currency.symbols[code] || '';
     const format = (rubAmount) => {
       const converted = rubAmount / rate;
-      const rounded = code === 'RUB' ? Math.round(converted) : Math.round(converted * 10) / 10;
-      const display = code === 'RUB'
+      const rounded = code === 'RUB' ? Math.round(converted) : Math.ceil(converted);
+      return code === 'RUB'
         ? `${rounded}${symbol}`
-        : `${symbol}${rounded.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 1 })}`;
-      return display;
+        : `${symbol}${rounded.toLocaleString('en-US')}`;
     };
     return { code, setCode, supported: SUPPORTED, format };
   }, [code]);
