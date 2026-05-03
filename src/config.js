@@ -48,4 +48,11 @@ export const CONFIG = {
       GBP: '£',
     },
   },
+  forms: {
+    // Sign up at https://formspree.io with practiceenglishwithjoan@gmail.com,
+    // create a new form, and paste the form ID below (the bit after /f/).
+    // While this stays as the placeholder, the form falls back to a mailto link.
+    formspreeId: 'YOUR_FORMSPREE_ID',
+    fallbackEmail: 'practiceenglishwithjoan@gmail.com',
+  },
 };

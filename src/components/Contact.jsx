@@ -2,6 +2,7 @@ import SectionReveal from './SectionReveal.jsx';
 import { CONFIG } from '../config.js';
 import { useT } from '../i18n/LanguageContext.jsx';
 import { WhatsAppIcon, TelegramIcon, InstagramIcon, ShieldIcon } from './Icons.jsx';
+import EnquiryForm from './EnquiryForm.jsx';
 
 export default function Contact() {
   const t = useT();
@@ -95,7 +96,11 @@ export default function Contact() {
           </div>
         </SectionReveal>
 
-        <SectionReveal delay={0.2} className="mt-8">
+        <SectionReveal delay={0.2} className="mt-10">
+          <EnquiryForm />
+        </SectionReveal>
+
+        <SectionReveal delay={0.25} className="mt-8">
           <div className="mx-auto max-w-3xl rounded-2xl bg-slate-50 ring-1 ring-slate-100 p-5 flex items-center gap-4">
             <div className="grid h-10 w-10 place-items-center rounded-xl bg-white text-brand-600 shadow-sm">
               <ShieldIcon className="h-5 w-5" />
