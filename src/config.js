@@ -49,10 +49,9 @@ export const CONFIG = {
     },
   },
   forms: {
-    // Sign up at https://formspree.io with practiceenglishwithjoan@gmail.com,
-    // create a new form, and paste the form ID below (the bit after /f/).
-    // While this stays as the placeholder, the form falls back to a mailto link.
-    formspreeId: 'YOUR_FORMSPREE_ID',
+    // Formspree endpoint ID. Submissions land in practiceenglishwithjoan@gmail.com
+    // and the Formspree dashboard at https://formspree.io.
+    formspreeId: 'xvzlzbea',
     fallbackEmail: 'practiceenglishwithjoan@gmail.com',
   },
 };
