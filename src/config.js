@@ -22,7 +22,7 @@ export const CONFIG = {
   },
   contacts: {
     whatsapp: 'https://wa.me/message/RT44T4WKCBBRE1',
-    telegram: 'https://t.me/your_telegram',
+    telegram: 'https://t.me/practiceenglishwithjoan',
     instagram: 'https://instagram.com/learnenglishwithjoan',
   },
   pricing: {
