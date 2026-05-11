@@ -6,27 +6,32 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="theme-color" content="#7c4dff" />
 
-    <title>Learn English with Joan, Native English Teacher Online</title>
+    <title>Online English Lessons with a Native Teacher | Learn English with Joan</title>
     <meta
       name="description"
-      content="Learn English online with Joan, a friendly native English teacher with 8+ years of experience. 1-on-1 conversation-focused lessons for kids and adults, all levels. Trial lesson from 500₽."
+      content="Learn English online with Joan, a friendly native English teacher with 8+ years of experience. 1-on-1 conversation-focused lessons for kids and adults, all levels. Book a trial lesson today."
     />
     <meta
       name="keywords"
-      content="native english teacher online, learn english with native speaker, english lessons online, english tutor, 1-on-1 english lessons, english conversation lessons, английский с носителем, репетитор английского онлайн"
+      content="online english lessons, native english teacher online, learn english with native speaker, english lessons online, english tutor, 1-on-1 english lessons, english conversation lessons, английский с носителем, репетитор английского онлайн"
     />
     <meta name="author" content="Agbo Omimi Faith Joan" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <link rel="canonical" href="https://learnenglishwithjoan.com/" />
 
+    <!-- Language alternates (the site serves English and Russian from the same URL via in-page toggle) -->
+    <link rel="alternate" hreflang="en" href="https://learnenglishwithjoan.com/" />
+    <link rel="alternate" hreflang="ru" href="https://learnenglishwithjoan.com/" />
+    <link rel="alternate" hreflang="x-default" href="https://learnenglishwithjoan.com/" />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://learnenglishwithjoan.com/" />
     <meta property="og:site_name" content="Learn English with Joan" />
-    <meta property="og:title" content="Learn English with Joan, Native English Teacher Online" />
+    <meta property="og:title" content="Online English Lessons with a Native Teacher | Learn English with Joan" />
     <meta
       property="og:description"
-      content="Friendly native English teacher with 8+ years of experience. Speak confidently from your first lesson. Trial lesson from 500₽."
+      content="Friendly native English teacher with 8+ years of experience. Speak confidently from your first lesson. Book a trial lesson today."
     />
     <meta property="og:image" content="https://learnenglishwithjoan.com/images/teacher-hero.jpg" />
     <meta property="og:image:alt" content="Joan, native English teacher" />
@@ -35,10 +40,10 @@
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Learn English with Joan, Native English Teacher Online" />
+    <meta name="twitter:title" content="Online English Lessons with a Native Teacher | Learn English with Joan" />
     <meta
       name="twitter:description"
-      content="Friendly native English teacher with 8+ years of experience. Trial lesson from 500₽."
+      content="Friendly native English teacher with 8+ years of experience. Book a trial lesson today."
     />
     <meta name="twitter:image" content="https://learnenglishwithjoan.com/images/teacher-hero.jpg" />
 
@@ -86,15 +91,22 @@
           }
         },
         {
-          "@type": "ProfessionalService",
+          "@type": ["Service", "ProfessionalService"],
           "@id": "https://learnenglishwithjoan.com/#service",
           "name": "Learn English with Joan",
           "url": "https://learnenglishwithjoan.com/",
           "image": "https://learnenglishwithjoan.com/images/teacher-hero.jpg",
           "description": "1-on-1 English lessons online with a native speaker. Speaking-focused lessons for kids and adults, beginner to advanced.",
           "provider": { "@id": "https://learnenglishwithjoan.com/#person" },
-          "areaServed": "Worldwide",
-          "availableLanguage": ["en", "ru"],
+          "areaServed": {
+            "@type": "Place",
+            "name": "Worldwide"
+          },
+          "availableLanguage": [
+            { "@type": "Language", "name": "English", "alternateName": "en" },
+            { "@type": "Language", "name": "Russian", "alternateName": "ru" }
+          ],
+          "category": "Online language tutoring",
           "priceRange": "500₽–1800₽",
           "serviceType": "Online English language lessons",
           "aggregateRating": {
