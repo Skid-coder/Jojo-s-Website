@@ -58,40 +58,43 @@ export default function Pricing() {
 function PlanCard({ plan, price, perLesson, popularLabel, featured }) {
   return (
     <div
-      className={`relative h-full rounded-2xl p-6 sm:p-7 transition-all duration-200 flex flex-col ${
+      className={`group relative h-full rounded-2xl p-6 sm:p-7 transition-all duration-300 ease-out flex flex-col ${
         featured
-          ? 'bg-gradient-to-br from-brand-600 to-brand-700 text-white shadow-soft ring-1 ring-brand-500 scale-[1.02]'
-          : 'bg-white ring-1 ring-slate-100 shadow-card hover:-translate-y-1 hover:shadow-lg'
+          ? 'bg-gradient-to-br from-brand-600 via-brand-600 to-brand-800 text-white shadow-glow ring-1 ring-brand-400/50 scale-[1.02]'
+          : 'bg-white ring-1 ring-slate-200/60 shadow-card hover:-translate-y-1.5 hover:shadow-card-hover hover:ring-brand-200/40'
       }`}
     >
       {featured && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-yellow-300 text-brand-900 px-3 py-1 text-xs font-bold shadow">
-            <SparkleIcon className="h-3.5 w-3.5" />
-            {popularLabel}
-          </span>
-        </div>
+        <>
+          <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-t from-brand-900/20 to-transparent" />
+          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-yellow-300 to-amber-300 text-brand-900 px-4 py-1.5 text-xs font-bold shadow-lg ring-1 ring-yellow-400/30">
+              <SparkleIcon className="h-3.5 w-3.5 animate-pulse-soft" />
+              {popularLabel}
+            </span>
+          </div>
+        </>
       )}
 
-      <div>
+      <div className="relative">
         <h3 className={`text-xl font-bold ${featured ? 'text-white' : 'text-slate-900'}`}>
           {plan.name}
         </h3>
-        <p className={`mt-1 text-sm ${featured ? 'text-brand-100' : 'text-slate-500'}`}>
+        <p className={`mt-1 text-sm ${featured ? 'text-brand-200' : 'text-slate-500'}`}>
           {plan.duration}
         </p>
       </div>
 
-      <div className="mt-5 flex items-baseline gap-1.5">
-        <span className={`text-4xl font-extrabold ${featured ? 'text-white' : 'text-slate-900'}`}>
+      <div className="relative mt-5 flex items-baseline gap-1.5">
+        <span className={`text-4xl font-extrabold tracking-tight ${featured ? 'text-white' : 'text-slate-900'}`}>
           {price}
         </span>
-        <span className={`text-sm ${featured ? 'text-brand-100' : 'text-slate-500'}`}>
+        <span className={`text-sm ${featured ? 'text-brand-200' : 'text-slate-500'}`}>
           {perLesson}
         </span>
       </div>
 
-      <ul className="mt-6 space-y-2.5 flex-1">
+      <ul className="relative mt-6 space-y-2.5 flex-1">
         {plan.features.map((f) => (
           <li key={f} className="flex items-start gap-2.5">
             <span
@@ -101,17 +104,17 @@ function PlanCard({ plan, price, perLesson, popularLabel, featured }) {
             >
               <CheckIcon className="h-3.5 w-3.5" />
             </span>
-            <span className={`text-sm ${featured ? 'text-brand-50' : 'text-slate-600'}`}>{f}</span>
+            <span className={`text-sm ${featured ? 'text-brand-100' : 'text-slate-600'}`}>{f}</span>
           </li>
         ))}
       </ul>
 
       <a
         href="#contact"
-        className={`mt-7 inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold transition-all duration-200 ${
+        className={`relative mt-7 inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold transition-all duration-300 ease-out overflow-hidden ${
           featured
-            ? 'bg-white text-brand-700 hover:bg-brand-50'
-            : 'bg-brand-600 text-white hover:bg-brand-700'
+            ? 'bg-white text-brand-700 shadow-sm hover:shadow-md hover:-translate-y-0.5 hover:bg-brand-50 active:scale-[0.98]'
+            : 'bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-btn hover:shadow-btn-hover hover:-translate-y-0.5 hover:from-brand-500 hover:to-brand-600 active:scale-[0.98]'
         }`}
       >
         {plan.cta}

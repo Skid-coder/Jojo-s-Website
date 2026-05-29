@@ -31,7 +31,7 @@ export default function Gallery() {
                     alt={`${t.about.imgAlt}, photo ${i + 1}`}
                     placeholder={null}
                     imgClassName="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-card"
+                    className="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-brand-100 to-blue-100 ring-1 ring-white shadow-card transition-shadow duration-300 group-hover:shadow-card-hover"
                   />
                 </figure>
               ))}

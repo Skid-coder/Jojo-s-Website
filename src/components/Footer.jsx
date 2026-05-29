@@ -17,10 +17,10 @@ export default function Footer() {
           </div>
         </div>
         <nav className="flex flex-wrap gap-5 text-sm text-slate-500">
-          <a href="#about" className="hover:text-brand-700">{t.footer.about}</a>
-          <a href="#pricing" className="hover:text-brand-700">{t.footer.pricing}</a>
-          <a href="#reviews" className="hover:text-brand-700">{t.footer.reviews}</a>
-          <a href="#contact" className="hover:text-brand-700">{t.footer.contact}</a>
+          <a href="#about" className="transition-colors duration-200 hover:text-brand-600">{t.footer.about}</a>
+          <a href="#pricing" className="transition-colors duration-200 hover:text-brand-600">{t.footer.pricing}</a>
+          <a href="#reviews" className="transition-colors duration-200 hover:text-brand-600">{t.footer.reviews}</a>
+          <a href="#contact" className="transition-colors duration-200 hover:text-brand-600">{t.footer.contact}</a>
         </nav>
       </div>
     </footer>

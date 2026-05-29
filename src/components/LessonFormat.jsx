@@ -24,8 +24,8 @@ export default function LessonFormat() {
         <div className="mt-10 grid sm:grid-cols-2 gap-5">
           {t.format.cards.map((f, i) => (
             <SectionReveal key={f.title} delay={i * 0.08}>
-              <div className="card flex gap-5 h-full">
-                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-brand-50 text-brand-600">
+              <div className="card flex gap-5 h-full group">
+                <div className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-blue-50 text-brand-600 shadow-sm transition-transform duration-300 group-hover:scale-110">
                   {ICONS[i]}
                 </div>
                 <div>

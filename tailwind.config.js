@@ -23,15 +23,34 @@ export default {
       },
       boxShadow: {
         soft: '0 10px 40px -12px rgba(91, 33, 182, 0.18)',
-        card: '0 8px 30px -10px rgba(17, 24, 39, 0.15)',
+        card: '0 4px 24px -6px rgba(17, 24, 39, 0.08), 0 12px 42px -4px rgba(17, 24, 39, 0.06)',
+        'card-hover': '0 8px 32px -4px rgba(91, 33, 182, 0.14), 0 16px 48px -8px rgba(17, 24, 39, 0.1)',
+        glow: '0 0 40px -8px rgba(124, 77, 255, 0.35)',
+        'btn': '0 4px 14px -4px rgba(91, 33, 182, 0.4)',
+        'btn-hover': '0 8px 24px -4px rgba(91, 33, 182, 0.5)',
       },
       animation: {
         'float-slow': 'float 8s ease-in-out infinite',
+        'shine': 'shine 1.5s ease-in-out',
+        'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 6s ease infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-14px)' },
+        },
+        shine: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'pulse-soft': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        },
+        'gradient-shift': {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
         },
       },
       backgroundImage: {

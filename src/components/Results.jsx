@@ -25,8 +25,8 @@ export default function Results() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {t.results.cards.map((r, i) => (
             <SectionReveal key={r.title} delay={i * 0.08}>
-              <div className="card h-full">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-blue-500 text-white shadow-soft">
+              <div className="card h-full group">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-600 to-blue-500 text-white shadow-soft transition-transform duration-300 group-hover:scale-110">
                   {ICONS[i]}
                 </div>
                 <h3 className="mt-4 font-bold text-slate-900 text-lg">{r.title}</h3>

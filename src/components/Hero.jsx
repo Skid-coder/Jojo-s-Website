@@ -17,8 +17,9 @@ export default function Hero() {
   const t = useT();
   return (
     <section id="top" className="relative overflow-hidden bg-hero-radial pt-28 sm:pt-32 pb-16 sm:pb-24">
-      <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-brand-200/40 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-80 w-80 rounded-full bg-blue-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute -top-24 -right-24 h-96 w-96 rounded-full bg-brand-200/30 blur-[100px]" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-96 w-96 rounded-full bg-blue-200/30 blur-[100px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-brand-100/20 blur-[120px]" />
 
       <div className="container-page grid lg:grid-cols-12 gap-10 lg:gap-12 items-center relative">
         <div className="lg:col-span-7">
@@ -35,7 +36,7 @@ export default function Hero() {
             custom={1}
           >
             {t.hero.headlineBefore}{' '}
-            <span className="bg-gradient-to-r from-brand-600 to-blue-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-brand-600 via-brand-500 to-blue-500 bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-shift">
               {t.hero.headlineHighlight}
             </span>{' '}
             {t.hero.headlineAfter}
@@ -99,7 +100,7 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
           <div className="relative mx-auto max-w-md">
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-300/40 via-blue-200/40 to-transparent blur-2xl" />
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-brand-300/40 via-blue-200/30 to-brand-200/20 blur-2xl animate-pulse-soft" />
             <Photo
               src={CONFIG.teacher.heroImage}
               alt={t.about.imgAlt}
@@ -112,7 +113,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="absolute -left-4 sm:-left-8 top-8 rounded-2xl bg-white shadow-card ring-1 ring-slate-100 p-3 pr-4 flex items-center gap-3 animate-float-slow"
+              className="absolute -left-4 sm:-left-8 top-8 rounded-2xl bg-white/90 backdrop-blur-sm shadow-card ring-1 ring-white/80 p-3 pr-4 flex items-center gap-3 animate-float-slow"
             >
               <div className="flex items-center -space-x-1">
                 {[...Array(5)].map((_, i) => (
@@ -131,7 +132,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="absolute -right-3 sm:-right-6 bottom-10 rounded-2xl bg-white shadow-card ring-1 ring-slate-100 p-3 flex items-center gap-3"
+              className="absolute -right-3 sm:-right-6 bottom-10 rounded-2xl bg-white/90 backdrop-blur-sm shadow-card ring-1 ring-white/80 p-3 flex items-center gap-3"
             >
               <div className="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-600">
                 <BadgeIcon className="h-5 w-5" />
@@ -150,8 +151,8 @@ export default function Hero() {
 
 function TrustBadge({ icon, title, subtitle }) {
   return (
-    <div className="rounded-2xl bg-white/70 backdrop-blur ring-1 ring-slate-100 shadow-sm px-3 sm:px-4 py-3 flex items-center gap-3">
-      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-slate-50">{icon}</div>
+    <div className="group rounded-2xl bg-white/80 backdrop-blur-sm ring-1 ring-white/80 shadow-card px-3 sm:px-4 py-3 flex items-center gap-3 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-0.5">
+      <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-50 to-blue-50 transition-transform duration-300 group-hover:scale-110">{icon}</div>
       <div className="leading-tight">
         <div className="font-bold text-slate-900 text-sm sm:text-base">{title}</div>
         <div className="text-slate-500 text-xs">{subtitle}</div>

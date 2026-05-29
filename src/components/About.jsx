@@ -11,7 +11,7 @@ export default function About() {
       <div className="container-page grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         <SectionReveal className="lg:col-span-5">
           <div className="relative mx-auto max-w-sm">
-            <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-brand-200/50 to-blue-200/40 blur-2xl" />
+            <div className="absolute -inset-4 rounded-[2.5rem] bg-gradient-to-br from-brand-200/50 to-blue-200/40 blur-2xl animate-pulse-soft" />
             <Photo
               src={CONFIG.teacher.aboutImage}
               alt={t.about.imgAlt}
@@ -41,7 +41,7 @@ export default function About() {
           <ul className="mt-7 grid sm:grid-cols-2 gap-3">
             {t.about.highlights.map((h) => (
               <li key={h} className="flex items-start gap-3">
-                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600">
+                <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-50 to-blue-50 text-brand-600 shadow-sm">
                   <CheckIcon className="h-4 w-4" />
                 </span>
                 <span className="text-slate-700 leading-snug">{h}</span>

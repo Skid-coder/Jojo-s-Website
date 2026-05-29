@@ -39,7 +39,7 @@ export default function EnquiryForm() {
   const fallbackAction = `mailto:${CONFIG.forms.fallbackEmail}`;
 
   return (
-    <div className="mx-auto max-w-3xl rounded-3xl bg-white ring-1 ring-slate-100 shadow-card p-7 sm:p-9">
+    <div className="mx-auto max-w-3xl rounded-3xl bg-white ring-1 ring-slate-200/60 shadow-card p-7 sm:p-9">
       <div className="text-center max-w-xl mx-auto">
         <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
           {t.formTitle}
@@ -131,7 +131,7 @@ function Field({ label, name, as = 'input', ...props }) {
       <Tag
         name={name}
         {...props}
-        className="mt-1.5 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-slate-200 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:outline-none transition-all resize-none"
+        className="mt-1.5 block w-full rounded-xl border-0 bg-slate-50 px-4 py-3 text-slate-900 ring-1 ring-slate-200/80 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-brand-500 focus:shadow-sm focus:outline-none transition-all duration-300 resize-none hover:ring-slate-300"
       />
     </label>
   );

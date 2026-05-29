@@ -27,10 +27,10 @@ export default function FAQ() {
               return (
                 <li
                   key={item.q}
-                  className={`rounded-2xl ring-1 transition-colors ${
+                  className={`rounded-2xl ring-1 transition-all duration-300 ${
                     open
-                      ? 'bg-white ring-brand-200 shadow-card'
-                      : 'bg-white ring-slate-100 shadow-sm hover:ring-slate-200'
+                      ? 'bg-white ring-brand-200 shadow-card-hover'
+                      : 'bg-white ring-slate-200/60 shadow-card hover:ring-brand-100 hover:shadow-card-hover'
                   }`}
                 >
                   <button
@@ -84,7 +84,7 @@ export default function FAQ() {
               href={CONFIG.contacts.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-5 py-3 shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
               <WhatsAppIcon className="h-5 w-5" />
               WhatsApp
@@ -93,7 +93,7 @@ export default function FAQ() {
               href={CONFIG.contacts.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-2xl bg-sky-500 hover:bg-sky-600 text-white font-semibold px-5 py-3 shadow-sm transition-colors"
+              className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-semibold px-5 py-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.98]"
             >
               <TelegramIcon className="h-5 w-5" />
               Telegram

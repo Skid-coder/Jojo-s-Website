@@ -25,7 +25,7 @@ export default function FloatingCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Telegram"
-        className="inline-flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-xl ring-4 ring-sky-500/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl"
+        className="inline-flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-xl ring-4 ring-sky-500/20 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:ring-sky-400/30 active:scale-95"
       >
         <TelegramIcon className="h-6 w-6" />
       </a>
@@ -35,7 +35,7 @@ export default function FloatingCTA() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t.nav.bookTrial}
-        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 text-white font-semibold shadow-xl ring-4 ring-emerald-500/20 transition-all duration-200 hover:-translate-y-1 hover:shadow-2xl px-4 py-3 sm:px-5 sm:py-3.5"
+        className="inline-flex items-center gap-2 rounded-full bg-gradient-to-br from-emerald-500 to-green-600 text-white font-semibold shadow-xl ring-4 ring-emerald-500/20 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:ring-emerald-400/30 active:scale-95 px-4 py-3 sm:px-5 sm:py-3.5"
       >
         <span className="relative inline-flex">
           <WhatsAppIcon className="h-5 w-5 sm:h-6 sm:w-6" />

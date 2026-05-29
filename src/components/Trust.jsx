@@ -24,10 +24,10 @@ export default function Trust() {
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {t.trust.cards.map((it, i) => (
             <SectionReveal key={it.title} delay={i * 0.08}>
-              <div className="card h-full">
+              <div className="card h-full group">
                 <div
-                  className={`grid h-12 w-12 place-items-center rounded-xl text-brand-600 ${
-                    ICONS[i].bare ? 'bg-transparent' : 'bg-gradient-to-br from-brand-50 to-blue-50'
+                  className={`grid h-12 w-12 place-items-center rounded-xl text-brand-600 transition-transform duration-300 group-hover:scale-110 ${
+                    ICONS[i].bare ? 'bg-gradient-to-br from-slate-50 to-blue-50' : 'bg-gradient-to-br from-brand-50 to-blue-50 shadow-sm'
                   }`}
                 >
                   {ICONS[i].node}

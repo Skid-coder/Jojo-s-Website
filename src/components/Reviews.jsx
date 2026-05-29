@@ -41,15 +41,16 @@ export default function Reviews() {
 function ReviewCard({ review }) {
   const initial = review.name.charAt(0).toUpperCase();
   return (
-    <article className="card h-full flex flex-col">
-      <div className="flex -space-x-1">
+    <article className="card h-full flex flex-col relative group">
+      <span className="absolute -top-2 -left-1 text-6xl leading-none font-serif text-brand-100 select-none pointer-events-none transition-colors duration-300 group-hover:text-brand-200">"</span>
+      <div className="flex -space-x-0.5">
         {[...Array(5)].map((_, i) => (
-          <StarIcon key={i} className="h-4 w-4 text-yellow-400" />
+          <StarIcon key={i} className="h-4 w-4 text-yellow-400 drop-shadow-sm" />
         ))}
       </div>
-      <p className="mt-4 text-slate-700 leading-relaxed flex-1">«{review.text}»</p>
+      <p className="mt-4 text-slate-700 leading-relaxed flex-1 relative">«{review.text}»</p>
       <div className="mt-5 pt-5 border-t border-slate-100 flex items-center gap-3">
-        <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-blue-500 text-white font-bold">
+        <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-blue-500 text-white font-bold shadow-sm ring-2 ring-white">
           {initial}
         </div>
         <div>

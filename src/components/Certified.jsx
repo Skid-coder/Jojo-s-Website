@@ -59,7 +59,7 @@ export default function Certified() {
                   <ul className="mt-4 grid sm:grid-cols-2 gap-3">
                     {c.modules.map((m) => (
                       <li key={m} className="flex items-start gap-3">
-                        <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600">
+                        <span className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-50 to-blue-50 text-brand-600 shadow-sm">
                           <CheckIcon className="h-4 w-4" />
                         </span>
                         <span className="text-slate-700 leading-snug text-sm">
